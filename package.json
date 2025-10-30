@@ -1,0 +1,28 @@
+{
+  "name": "zeller-discount-engine",
+  "version": "1.0.0",
+  "description": "A TypeScript-based discount calculation engine built as part of the Zeller Hiring Code Challenge.",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pushfirst/zeller-discount-engine.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pushfirst/zeller-discount-engine/issues"
+  },
+  "homepage": "https://github.com/pushfirst/zeller-discount-engine#readme",
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.4.5",
+    "typescript": "^5.9.3"
+  }
+}
