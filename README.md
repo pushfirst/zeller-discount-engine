@@ -27,6 +27,7 @@ Build a modular, testable, and OOP-driven **discount calculation engine** — de
 
 ### Clone the repository
 git clone https://github.com/pushfirst/zeller-discount-engine.git
+
 cd zeller-discount-engine
 
 ### Install dependencies
