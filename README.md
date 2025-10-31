@@ -23,3 +23,14 @@ Build a modular, testable, and OOP-driven **discount calculation engine** — de
 - [x] Validate correctness with Jest tests for all cases  
 - [ ] Final polish – review, documentation, and commit
 
+## 🚀 How to Run the Project
+
+### Clone the repository
+git clone https://github.com/pushfirst/zeller-discount-engine.git
+cd zeller-discount-engine
+
+### Install dependencies
+npm i
+
+### Run tests (verify functionality)
+npm test
