@@ -1,6 +1,5 @@
 import { Checkout } from "../src/engine/discount-engine";
-import { BuyXPayYRule } from "../src/rules/buy-x-pay-y-rule";
-import { BulkPriceRule } from "../src/rules/bulk-price-rule";
+import { RuleConfig, RuleFactory } from "../src/rules/rule-factory";
 import { catalogue } from "../src/catalogue";
 
 describe('Checkout Acceptance Scenarios', () => {
@@ -11,11 +10,26 @@ describe('Checkout Acceptance Scenarios', () => {
         expect(catalogue.vga.priceCents).toBe(3000);
     });
 
-    const rules = [
-        new BuyXPayYRule('atv', 3, 2), // Buy 3 Pay 2 on Apple TVs
-        new BulkPriceRule('ipd', 4, 49999), // Bulk price on Super iPads
+    const discountRulesConfig: RuleConfig[] = [
+        {
+            type: 'BUY_X_PAY_Y',
+            params: {
+                sku: 'atv',
+                buyQuantity: 3,
+                payQuantity: 2
+            }
+        },
+        {
+            type: 'BULK_PRICE',
+            params: {
+                sku: 'ipd',
+                thresholdExclusive: 4,
+                bulkUnitCents: 49999
+            }
+        }
     ];
 
+    const rules = discountRulesConfig.map(config => RuleFactory.fromConfig(config))
     it('2. atv atv atv, vga => total $249.00', () => {
         const checkout = new Checkout(rules);
         checkout.scan('atv');
